@@ -1,14 +1,19 @@
 package arrays;
 
+import java.util.Scanner;
+
 public class ArrayPractical {
 
 	public static void main(String[] args) {
 		
-		question1();
-		System.out.println();
-		question2();
-		System.out.println();
-		question3();
+//		question1();
+//		System.out.println();
+//		question2();
+//		System.out.println();
+//		question3();
+		
+		question5();
+		
 	}
 	
 	public static void question1() {
@@ -108,6 +113,61 @@ public class ArrayPractical {
 			}
 		}
 		System.out.println("Smallest height: "+minHeight);
+	}
+	
+	public static void question5() {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter your name: ");
+		String name = scanner.next();
+		
+		char[] arr = new char[name.length()];
+		
+		char a='a',e='e',i='i',o='o',u='u';
+		
+		int vowelA=0,vowelE=0,vowelI=0,vowelO=0,vowelU=0;
+		
+		for(int loop=0;loop<arr.length;loop++) {
+			arr[loop] = name.charAt(loop);
+			System.out.printf("%s",arr[loop]);
+			
+		}
+		
+		for(int loop = 0;loop<arr.length;loop++) {
+			if(arr[loop] == a) {
+				vowelA += 1;
+			}
+			
+			if(arr[loop] == e) {
+				vowelE+=1;
+			}
+			
+			if(arr[loop] == i) {
+				vowelI+=1;
+			}
+			
+			if(arr[loop] == o) {
+				vowelO+=1;
+			}
+			
+			if(arr[loop] == u) {
+				vowelU+=1;
+			}
+		}
+		
+		System.out.println();
+		System.out.println("a:"+vowelA);
+		System.out.println("e:"+vowelE);
+		System.out.println("i:"+vowelI);
+		System.out.println("o:"+vowelO);
+		System.out.println("u:"+vowelU);
+		
+		int sum = vowelA+vowelE+vowelI+vowelO+vowelU;
+		
+		System.out.println("Total number of vowels: "+sum);
+		
+		
+		
 	}
 
 }
