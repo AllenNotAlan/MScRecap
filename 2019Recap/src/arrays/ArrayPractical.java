@@ -6,13 +6,39 @@ public class ArrayPractical {
 
 	public static void main(String[] args) {
 		
+		int[] arrayTest = {1,2,3,4,5,6};
+		
 //		question1();
 //		System.out.println();
 //		question2();
 //		System.out.println();
 //		question3();
 		
-		question5();
+//		question5();
+//		question6();
+		
+//		question7(arrayTest);
+		
+		//question 8 array1
+		double[] mark1 = new double[5];
+		mark1[0] = 24;
+		mark1[1] = 42;
+		mark1[2] = 29;
+		mark1[3] = 66;
+		mark1[4] = 77;
+		
+		//question 8 array 2
+		double[] mark2 = {78, 68, 31, 22, 42};
+		
+		double mark1av = question8average(mark1);
+		double mark2av = question8average(mark2);
+		
+		System.out.println("Average of assignment 1: "+mark1av);
+		System.out.println("Average of assignment 2 : "+mark2av);
+		
+		System.out.println("Average of both assignments combined: "+question8OverallAverage(mark1, mark2));
+		
+		System.out.println("Better average is : "+question8BetterAverage(question8average(mark1), question8average(mark2)));
 		
 	}
 	
@@ -169,5 +195,101 @@ public class ArrayPractical {
 		
 		
 	}
+	
+	public static void question6() {
+		
+		int[] oneHundred= new int[101];
+		
+		int sumOfEvens = 0;
+		
+		for(int loop = 1;loop<=oneHundred.length;loop++) {
+			if(loop%2 == 0) {
+				oneHundred[loop]=loop;
+				System.out.println(oneHundred[loop]);
+				sumOfEvens+=loop;
+			}
+		}
+		
+		System.out.println("Sum of all evens: "+sumOfEvens);
+		
+	}
+	
+	public static void question7(int[] arr) {
+		
+//		for(int loop = 0; loop < arr.length; loop++) {
+//			System.out.println(arr);
+//		}
+		
+		/*
+		 * for each loop to print values within an array
+		 */
+		for(int nums: arr) {
+			System.out.println(nums);
+		}
+		
+	}
+	
+	
+	public static double question8average(double[] arr) {
+		
+		double average = 0;
+		double sumOf = 0;
+		
+		//find total value
+		for(int loop = 0;loop<arr.length;loop++) {
+			sumOf = sumOf + arr[loop];
+		}
+		
+		//average
+		average = sumOf/arr.length;
+		return average;
+	}
+	
+	public static double question8OverallAverage(double[] arr1, double[] arr2) {
+		
+		int numberOfValues = arr1.length + arr2.length;
+		double average = 0;
+		double sumOf1 = 0;
+		double sumOf2 = 0;
+		double totalSum = 0;
+		
+		//sum of arr1
+		for(int loop = 0;loop<arr1.length;loop++) {
+			sumOf1 += arr1[loop];
+		}
+		
+		//sum of arr2
+		for(int loop = 0;loop<arr2.length;loop++) {
+			sumOf2 += arr2[loop];
+		}
+		
+		totalSum = sumOf1 + sumOf2;
+		
+		average = totalSum/numberOfValues;
+		
+		return average;
+	}
+	
+	public static double question8BetterAverage(double num1, double num2) {
+		
+		if(num1>num2) {
+			return num1;
+		}else {
+			return num2;
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
