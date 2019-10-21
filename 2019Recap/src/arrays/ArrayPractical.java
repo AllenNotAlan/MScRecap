@@ -20,25 +20,27 @@ public class ArrayPractical {
 //		question7(arrayTest);
 		
 		//question 8 array1
-		double[] mark1 = new double[5];
-		mark1[0] = 24;
-		mark1[1] = 42;
-		mark1[2] = 29;
-		mark1[3] = 66;
-		mark1[4] = 77;
+//		double[] mark1 = new double[5];
+//		mark1[0] = 24;
+//		mark1[1] = 42;
+//		mark1[2] = 29;
+//		mark1[3] = 66;
+//		mark1[4] = 77;
 		
 		//question 8 array 2
-		double[] mark2 = {78, 68, 31, 22, 42};
+//		double[] mark2 = {78, 68, 31, 22, 42};
+//		
+//		double mark1av = question8average(mark1);
+//		double mark2av = question8average(mark2);
+//		
+//		System.out.println("Average of assignment 1: "+mark1av);
+//		System.out.println("Average of assignment 2 : "+mark2av);
+//		
+//		System.out.println("Average of both assignments combined: "+question8OverallAverage(mark1, mark2));
+//		
+//		System.out.println("Better average is : "+question8BetterAverage(question8average(mark1), question8average(mark2)));
 		
-		double mark1av = question8average(mark1);
-		double mark2av = question8average(mark2);
-		
-		System.out.println("Average of assignment 1: "+mark1av);
-		System.out.println("Average of assignment 2 : "+mark2av);
-		
-		System.out.println("Average of both assignments combined: "+question8OverallAverage(mark1, mark2));
-		
-		System.out.println("Better average is : "+question8BetterAverage(question8average(mark1), question8average(mark2)));
+		question9();
 		
 	}
 	
@@ -278,7 +280,93 @@ public class ArrayPractical {
 			return num2;
 		}
 		
+	}
+	
+	public static void question9() {
 		
+		String[] quote = new String[13];
+		
+		quote[0] = "Continuous";
+		quote[1] = "efford";
+		quote[2] = "not";
+		quote[3] = "strength";
+		quote[4] = "nor";
+		quote[5] = "intelligence";
+		quote[6] = "is";
+		quote[7] = "the";
+		quote[8] = "key";
+		quote[9] = "for";
+		quote[10] = "unlocking";
+		quote[11]= "our";
+		quote[12] = "potential";
+		
+		//prints quote using for each
+		for(String word: quote) {
+			System.out.printf("%s ",word);
+		}
+		
+		System.out.println();
+		
+		//prints the quote using regular for loop
+		for(int loop=0;loop<quote.length;loop++) {
+			System.out.printf("%s ",quote[loop]);
+		}
+		System.out.println();
+		
+		//how many words?
+		System.out.println("\nNumber of words in the quote: "+ quote.length);
+		
+		
+		int sumOfLetters = 0;
+		
+		//new array created containing length of each word
+		int[] letterArray = new int[quote.length];
+		
+		System.out.println("\nLength of each word: ");
+		//for loop to print each length of word in the letterArray
+		for(int loop = 0;loop<quote.length;loop++) {
+			
+			char[] a = quote[loop].toCharArray();
+			
+			letterArray[loop] = a.length;
+			System.out.printf("%d, ",letterArray[loop]);
+			
+			sumOfLetters = sumOfLetters + letterArray[loop];
+			
+		}
+		
+		System.out.println("\n");
+		
+		System.out.println("Number of letters in the quote: "+ sumOfLetters+"\n");
+		
+		int shortestWord = letterArray[0];
+		int longestWord = letterArray[0];
+		for(int loop = 0;loop<letterArray.length;loop++) {
+			if(shortestWord > letterArray[loop]) {
+				shortestWord = letterArray[loop];
+			}
+			if(letterArray[loop]>longestWord) {
+				longestWord = letterArray[loop];
+			}
+		}
+		
+		System.out.println("Longest word is "+longestWord+" characters in length.");
+		
+		System.out.print("The longest word is: ");
+		for(int loop = 0;loop<quote.length;loop++) {
+			if(quote[loop].length() == longestWord) {
+				System.out.println(quote[loop]);
+			}
+		}
+		System.out.println();
+		
+		System.out.println("Shortest word is "+shortestWord+" characters in length.");
+		System.out.print("The shortest word is : ");
+		for(int loop = 0;loop<quote.length;loop++) {
+			if(quote[loop].length() == shortestWord) {
+				System.out.println(quote[loop]);
+			}
+		}
 		
 	}
 	
