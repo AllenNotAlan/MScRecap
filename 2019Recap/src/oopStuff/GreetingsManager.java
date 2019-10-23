@@ -16,7 +16,8 @@ public class GreetingsManager {
 		
 		//create object of type MessageCentre
 		MessageCentre myMessageCentre = new MessageCentre();
-		myMessageCentre.displayWelcomeMessage();
+		//MessageCentre method invoked
+		myMessageCentre.displayWelcomeMessage("am");
 		
 		System.out.println("Greetings Manager App ..... close");
 		
