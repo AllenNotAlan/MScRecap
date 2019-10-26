@@ -16,6 +16,9 @@ public class Book {
 		System.out.println("Creating a book object");
 	}
 	
+	/*
+	 * constructor with arguments
+	 */
 	public Book(String title) {
 		this.title = title;
 	}

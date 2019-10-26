@@ -82,6 +82,34 @@ public class Car {
 		return "Car [make=" + make + ", model=" + model + ", colour=" + colour + ", numberOfDoors=" + numberOfDoors
 				+ ", engineSize=" + engineSize + ", maxSpeed=" + maxSpeed + ", started=" + started + "]";
 	}
+
+	/**
+	 * Constructor with args. This overrides the default constructor IF one is not manually created.
+	 * @param make
+	 * @param model
+	 * @param colour
+	 * @param numberOfDoors
+	 * @param engineSize
+	 * @param maxSpeed
+	 * @param started
+	 */
+	public Car(String make, String model, String colour, int numberOfDoors, double engineSize, int maxSpeed,
+			boolean started) {
+		this.make = make;
+		this.model = model;
+		this.colour = colour;
+		this.numberOfDoors = numberOfDoors;
+		this.engineSize = engineSize;
+		this.maxSpeed = maxSpeed;
+		this.started = started;
+	}
+	
+	/*
+	 * This is a default constructor
+	 */
+	public Car() {
+		
+	}
 	
 	
 	
